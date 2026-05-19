@@ -11,7 +11,7 @@ export default function Header() {
         {/* Logo Section */}
         <div className='flex items-center'>
           {/* <img src={logo} alt="logo" className="h-26 w-32 object-fit" /> */}
-          <span className=" font-extrabold text-3xl tracking-[3px] antialiased text-white font-['Syne']">
+          <span className=" font-extrabold text-3xl tracking-[3px]  text-white font-['Poppins']">
             PC
           </span>        </div>
 
@@ -19,7 +19,7 @@ export default function Header() {
         <div className='hidden lg:flex items-center gap-12'>
           <a href="#navbar" className="hover:border-b hover:border-[#2A8FEA] active:text-[#2A8FEA]">Home</a>
           <a href="#AboutSection" className="hover:border-b hover:border-[#2A8FEA]">About</a>
-          <a href="#" className="hover:border-b hover:border-[#2A8FEA]">Skills</a>
+          <a href="#skills" className="hover:border-b hover:border-[#2A8FEA]">Skills</a>
           <a href="#" className="hover:border-b hover:border-[#2A8FEA]">Projects</a>
           <a href="#" className="hover:border-b hover:border-[#2A8FEA]">Contact</a>
         </div>
