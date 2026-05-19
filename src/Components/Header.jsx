@@ -17,7 +17,7 @@ export default function Header() {
 
         {/* Desktop & Tablet Links (Hidden on Mobile/Tablet, visible on Desktop) */}
         <div className='hidden lg:flex items-center gap-12'>
-          <a href="#" className="hover:border-b hover:border-[#2A8FEA] active:text-[#2A8FEA]">Home</a>
+          <a href="/HeroSection.jsx" className="hover:border-b hover:border-[#2A8FEA] active:text-[#2A8FEA]">Home</a>
           <a href="#" className="hover:border-b hover:border-[#2A8FEA]">About</a>
           <a href="#" className="hover:border-b hover:border-[#2A8FEA]">Skills</a>
           <a href="#" className="hover:border-b hover:border-[#2A8FEA]">Projects</a>
