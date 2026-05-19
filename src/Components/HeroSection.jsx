@@ -60,10 +60,10 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
           <a
             href="#projects"
-            className="group relative w-full sm:w-auto px-8 py-4 bg-[#2A8FEA] text-white font-bold text-sm sm:text-base tracking-wide uppercase rounded-full overflow-hidden shadow-[0_0_20px_rgba(42,143,234,0.3)] hover:shadow-[0_0_40px_rgba(42,143,234,0.5)] transition-all duration-300 transform hover:-translate-y-1"
+            className="group relative w-full sm:w-auto px-8 py-4 bg-[#2A8FEA] text-white font-bold text-sm sm:text-base tracking-wide rounded-full overflow-hidden shadow-[0_0_20px_rgba(42,143,234,0.3)] hover:shadow-[0_0_40px_rgba(42,143,234,0.5)] transition-all duration-300 transform hover:-translate-y-1"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              View My Work
+              View Project
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 transform group-hover:translate-x-1 transition-transform"
@@ -84,9 +84,9 @@ export default function Hero() {
 
           <a
             href="#contact"
-            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gray-600 text-gray-300 font-medium text-sm sm:text-base tracking-wide uppercase rounded-full hover:border-[#2A8FEA] hover:text-[#2A8FEA] hover:bg-[#2A8FEA]/5 transition-all duration-300"
+            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gray-600 text-gray-300 font-medium text-sm sm:text-base tracking-wide rounded-full hover:border-[#2A8FEA] hover:text-[#2A8FEA] hover:bg-[#2A8FEA]/5 transition-all duration-300"
           >
-            Let's Talk
+            Contact Me
           </a>
         </div>
       </div>
