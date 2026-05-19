@@ -10,7 +10,7 @@ export default function AboutSection() {
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-[#2A8FEA] rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 bg-[#1E75C4] rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 mb-25">
         {/* Section Heading */}
         <div className="flex flex-col items-center mb-16 md:mb-24">
           <p className="text-[#2A8FEA] font-semibold tracking-[0.2em] uppercase mb-2 text-sm md:text-base">
@@ -93,9 +93,7 @@ export default function AboutSection() {
                 className="text-white font-semibold text-[15px] block truncate"
                 title="princechavada897@gmail.com"
               >
-                princechavada897
-                <br />
-                @gmail.com
+                princechavada897@gmail.com
               </span>
             </div>
 

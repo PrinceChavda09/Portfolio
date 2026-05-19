@@ -3,10 +3,10 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex pb-40 px-6 overflow-hidden bg-[#020617]">
+    <section className="relative min-h-[92vh] flex flex-col items-center justify-center pb-10 px-6 overflow-hidden bg-[#020617]">
       {/* Grid background for texture */}
       <div
-        className="inset-0 z-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: "radial-gradient(white 1px, transparent 1px)",
           backgroundSize: "40px 40px",
@@ -21,22 +21,11 @@ export default function Hero() {
         </p>
 
         {/* Main Name */}
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#2A8FEA] to-white text-5xl sm:text-7xl md:text-8xl lg:text-[55px] xl:text-[65px] font-extrabold uppercase leading-[1.1] mb-6 tracking-tighter drop-shadow-2xl select-none">
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#2A8FEA] to-white text-4xl sm:text-5xl md:text-6xl lg:text-[55px] xl:text-[65px] font-extrabold uppercase leading-[1.1] mb-6 tracking-tighter drop-shadow-2xl select-none">
           Prince Chavda
         </h1>
-        {/* {discription} */}
-        {/* <p className='text-gray-400 text-lg  mb-4 tracking-[1.5px] font-light '>Full Stack Developer skilled in creating modern web applications with clean UI, strong backend logic, and seamless user experience.</p> */}
-        {/* Subtitle */}
-        {/* <p className="text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-12 max-w-3xl mx-auto leading-relaxed">
-                    <span className="text-[#086fc8] font-semibold relative inline-block group">
-                        Full-Stack
-                        <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#2A8FEA] transform origin-left scale-x-100 group-hover:scale-x-110 transition-transform duration-300" />
-                    </span>{' '}
-                    Development.
-                </p> */}
-        {/* Type Animation */}
         <TypeAnimation
-          className="font-[Montserrat] text-4xl py-1 mb-10 text-[#2A8FEA] border-b-2 border-gray-500"
+          className="font-[Montserrat] text-2xl max-[420px]:text-xl sm:text-3xl md:text-4xl py-1 mb-10 text-[#2A8FEA] border-b-2 border-gray-500"
           sequence={[
             "Full Stack Developer",
             2000,
