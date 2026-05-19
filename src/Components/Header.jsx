@@ -19,14 +19,6 @@ export default function Header() {
         </div>
 
         {/* Desktop & Tablet Links (Hidden on Mobile/Tablet, visible on Desktop) */}
-<<<<<<< Updated upstream
-        <div className='hidden lg:flex items-center gap-12'>
-          <a href="#navbar" className="hover:border-b hover:border-[#2A8FEA] active:text-[#2A8FEA]">Home</a>
-          <a href="#AboutSection" className="hover:border-b hover:border-[#2A8FEA]">About</a>
-          <a href="#skills" className="hover:border-b hover:border-[#2A8FEA]">Skills</a>
-          <a href="#" className="hover:border-b hover:border-[#2A8FEA]">Projects</a>
-          <a href="#" className="hover:border-b hover:border-[#2A8FEA]">Contact</a>
-=======
         <div className="hidden lg:flex items-center gap-12">
           <a
             href="#navbar"
@@ -40,16 +32,15 @@ export default function Header() {
           >
             About
           </a>
-          <a href="#" className="hover:border-b hover:border-[#2A8FEA]">
+          <a href="#skills" className="hover:border-b hover:border-[#2A8FEA]">
             Skills
           </a>
-          <a href="#" className="hover:border-b hover:border-[#2A8FEA]">
+          <a href="#projects" className="hover:border-b hover:border-[#2A8FEA]">
             Projects
           </a>
-          <a href="#" className="hover:border-b hover:border-[#2A8FEA]">
+          <a href="#contact" className="hover:border-b hover:border-[#2A8FEA]">
             Contact
           </a>
->>>>>>> Stashed changes
         </div>
 
         {/* Hamburger Menu Button (Visible on Mobile & Tablet, Hidden on Desktop) */}
