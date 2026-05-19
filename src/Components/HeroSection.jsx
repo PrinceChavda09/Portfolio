@@ -90,6 +90,16 @@ export default function Hero() {
           </a>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
+        <span className="text-gray-500 text-[10px] tracking-widest uppercase mb-2">
+          Scroll Down
+        </span>
+        <div className="w-[1px] h-12 bg-gray-800 relative overflow-hidden">
+          <div className="w-full h-1/2 bg-[#2A8FEA] absolute top-0 left-0 animate-[bounce_2s_infinite]" />
+        </div>
+      </div>
     </section>
   );
 }
