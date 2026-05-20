@@ -31,7 +31,7 @@ export default function Project() {
   ];
 
   return (
-    <section id="projects" className="relative py-24 px-6 bg-black border-t border-gray-900 overflow-hidden">
+    <section id="projects" className="relative py-24 px-6 bg-[#020617] border-t border-gray-900 overflow-hidden">
       
       {/* Background Gradient */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2A8FEA]/10 blur-[150px] rounded-full pointer-events-none" />

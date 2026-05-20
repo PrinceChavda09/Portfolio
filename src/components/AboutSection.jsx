@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section
       id="AboutSection"
-      className="relative  bg-[#020617] overflow-hidden"
+      className="relative bg-[#020617] overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-[#2A8FEA] rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none"></div>

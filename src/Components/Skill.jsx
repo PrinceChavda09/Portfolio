@@ -8,23 +8,23 @@ export default function Skill() {
       skills: [
         {
           name: "React.js",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+          logo: "/Skill/react.png",
         },
         {
           name: "JavaScript",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+          logo: "/Skill/javascript.png",
         },
         {
           name: "Tailwind CSS",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+          logo: "/Skill/tailwind.png",
         },
         {
           name: "HTML5 & CSS3",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+          logo: "/Skill/html.png",
         },
         {
           name: "Responsive Design",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+          logo: "/Skill/responsive.png",
         },
       ],
     },
@@ -32,25 +32,29 @@ export default function Skill() {
       title: "Backend & Database",
       skills: [
         {
-          name: "Node.js",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+          name: "Python",
+          logo: "/Skill/python.png",
         },
         {
-          name: "Express.js",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+          name: "Django",
+          logo: "/Skill/django.png",
         },
-        {
-          name: "REST APIs",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg",
-        },
-        {
-          name: "MongoDB",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-        },
-        {
-          name: "SQL Basics",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
-        },
+        // {
+        //   name: "Node.js",
+        //   logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+        // },
+        // {
+        //   name: "Express.js",
+        //   logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+        // },
+        // {
+        //   name: "REST APIs",
+        //   logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg",
+        // },
+        // {
+        //   name: "MongoDB",
+        //   logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+        // },
       ],
     },
     {
@@ -58,23 +62,15 @@ export default function Skill() {
       skills: [
         {
           name: "Git & GitHub",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+          logo: "/Skill/git.png",
         },
         {
           name: "VS Code",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+          logo: "/Skill/vscode.png",
         },
         {
           name: "Vite",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
-        },
-        {
-          name: "NPM / Yarn",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg",
-        },
-        {
-          name: "Postman",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+          logo: "/Skill/vite.png",
         },
       ],
     },
@@ -83,7 +79,7 @@ export default function Skill() {
   return (
     <section
       id="skills"
-      className="relative py-24 px-6 bg-black border-t border-gray-900 bg-grid-pattern"
+      className="relative py-24 px-6 bg-[#020617] border-t border-gray-900 bg-grid-pattern"
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Heading */}
@@ -117,11 +113,15 @@ export default function Skill() {
                     className="flex items-center gap-4 p-3 bg-gray-950 border border-gray-800 rounded-xl hover:border-gray-600 hover:bg-gray-900 transition-colors duration-200"
                   >
                     {/* Skill Logo inside a soft white box for visibility on black */}
-                    <div className="w-12 h-10 flex items-center justify-center bg-white/5 rounded-lg p-1.5 border border-white/5">
+                    <div className="w-12 h-10 flex items-center justify-center bg-white/5 rounded-lg p-1 border border-white/5">
                       <img
                         src={skill.logo}
                         alt={`${skill.name} logo`}
-                        className="w-full h-full object-contain"
+                        className={`w-full h-full object-contain ${
+                          skill.name === 'VS Code' ? 'scale-[1.7]' :
+                          ['Git & GitHub', 'Vite'].includes(skill.name) ? 'scale-[1.4]' : 
+                          'scale-110'
+                        }`}
                         loading="lazy"
                       />
                     </div>

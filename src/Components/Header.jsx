@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <nav
       id="navbar"
-      className="w-full shadow-lg bg-black text-white p-4 relative"
+      className="w-full shadow-lg bg-[#020617] text-white p-4 relative border-b border-gray-900"
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo Section */}
@@ -84,7 +84,7 @@ export default function Header() {
 
       {/* Mobile & Tablet Dropdown Menu (Shows when button is clicked) */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-black flex flex-col items-center gap-6 py-6 border-t border-gray-800 z-50">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-[#020617] flex flex-col items-center gap-6 py-6 border-t border-gray-800 z-50">
           <a
             href="#navbar"
             onClick={() => setIsMenuOpen(false)}
