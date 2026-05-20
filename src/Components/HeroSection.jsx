@@ -3,7 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex flex-col items-center justify-center pb-10 px-6 overflow-hidden bg-[#020617]">
+    <section id="home" className="relative min-h-[92vh] flex flex-col items-center justify-center pb-10 px-6 overflow-hidden bg-[#020617]">
       {/* Grid background for texture */}
       <div
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"

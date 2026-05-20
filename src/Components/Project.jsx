@@ -44,7 +44,7 @@ export default function Project() {
             Portfolio
           </h2>
           <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">
-            Featured Projects
+            Projects
           </p>
           <div className="w-12 h-[2px] bg-[#2A8FEA] mx-auto mt-4" />
         </div>

@@ -88,7 +88,7 @@ export default function Skill() {
             Expertise & Capabilities
           </h2>
           <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">
-            Technical Core Skills
+            Technical Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A8FEA] to-[#60A5FA]"> Skills </span>
           </p>
           <div className="w-12 h-[2px] bg-[#2A8FEA] mx-auto mt-4" />
         </div>

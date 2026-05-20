@@ -71,8 +71,11 @@ export default function Contact() {
           <h2 className="text-xs font-bold tracking-[0.25em] text-[#2A8FEA] uppercase mb-3">
             Get In Touch
           </h2>
-          <p className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight uppercase">
-            Contact Me
+          <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">
+            Contact{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A8FEA] to-[#60A5FA]">
+              Me
+            </span>
           </p>
           <div className="w-16 h-[3px] bg-gradient-to-r from-transparent via-[#2A8FEA] to-transparent mx-auto mt-6" />
         </div>

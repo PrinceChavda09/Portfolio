@@ -17,3 +17,14 @@ html.lenis, html.lenis body {
 .lenis-stopped {
   overflow: hidden;
 }
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

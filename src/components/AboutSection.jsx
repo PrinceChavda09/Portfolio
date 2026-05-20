@@ -16,12 +16,9 @@ export default function AboutSection() {
           <p className="text-[#2A8FEA] font-semibold tracking-[0.2em] uppercase mb-2 text-sm md:text-base">
             Get to know
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white capitalize tracking-tight">
-            About{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A8FEA] to-[#60A5FA]">
-              Me
-            </span>
-          </h2>
+          <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A8FEA] to-[#60A5FA]">Me</span>
+            </p>
           <div className="w-24 h-1 bg-[#2A8FEA] mt-6 rounded-full shadow-[0_0_15px_rgba(42,143,234,0.5)]"></div>
         </div>
 
