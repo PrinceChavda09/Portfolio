@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section
       id="AboutSection"
-      className="relative bg-[#020617] overflow-hidden"
+      className="relative pt-32 pb-24 bg-[#020617] border-t border-gray-900 overflow-hidden scroll-mt-20"
     >
       {/* Background decorations */}
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-[#2A8FEA] rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none"></div>
@@ -17,8 +17,11 @@ export default function AboutSection() {
             Get to know
           </p>
           <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight uppercase">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A8FEA] to-[#60A5FA]">Me</span>
-            </p>
+            About{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A8FEA] to-[#60A5FA]">
+              Me
+            </span>
+          </p>
           <div className="w-24 h-1 bg-[#2A8FEA] mt-6 rounded-full shadow-[0_0_15px_rgba(42,143,234,0.5)]"></div>
         </div>
 

@@ -3,7 +3,10 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-[92vh] flex flex-col items-center justify-center pb-10 px-6 overflow-hidden bg-[#020617]">
+    <section
+      id="home"
+      className="relative min-h-[100vh] flex flex-col items-center justify-center pb-10 px-6 overflow-hidden bg-[#020617]"
+    >
       {/* Grid background for texture */}
       <div
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
@@ -80,14 +83,28 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
-        <span className="text-gray-500 text-[10px] tracking-widest uppercase mb-2">
-          Scroll Down
-        </span>
-        <div className="w-[1px] h-12 bg-gray-800 relative overflow-hidden">
-          <div className="w-full h-1/2 bg-[#2A8FEA] absolute top-0 left-0 animate-[bounce_2s_infinite]" />
-        </div>
+      {/* Scroll Down Arrow */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center z-10 animate-bounce cursor-pointer">
+        <a
+          href="#AboutSection"
+          className="text-gray-400 hover:text-[#2A8FEA] transition-colors duration-300"
+          aria-label="Scroll Down"
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2.5"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </a>
       </div>
     </section>
   );

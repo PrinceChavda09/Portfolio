@@ -79,7 +79,7 @@ export default function Skill() {
   return (
     <section
       id="skills"
-      className="relative py-24 px-6 bg-[#020617] border-t border-gray-900 bg-grid-pattern"
+      className="relative py-24 px-6 bg-[#020617] border-t border-gray-900 bg-grid-pattern scroll-mt-20"
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Heading */}

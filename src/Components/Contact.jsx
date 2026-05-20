@@ -60,7 +60,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 px-6 bg-[#020617] border-t border-gray-900 overflow-hidden"
+      className="relative py-24 px-6 bg-[#020617] border-t border-gray-900 overflow-hidden scroll-mt-20"
     >
       {/* Background Decor */}
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#2A8FEA]/10 blur-[150px] rounded-full pointer-events-none" />
