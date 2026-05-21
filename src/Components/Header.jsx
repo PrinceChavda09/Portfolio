@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 // import logo from "../assets/logo.png";
 
 export default function Header() {
@@ -46,7 +47,10 @@ export default function Header() {
   }, []);
 
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, type: "spring", stiffness: 50 }}
       id="navbar"
       className="w-full backdrop-blur-3xl fixed top-0 left-0 z-50 shadow-lg text-white p-4 border-b border-gray-900"
     >
@@ -237,6 +241,6 @@ export default function Header() {
           </a>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 }

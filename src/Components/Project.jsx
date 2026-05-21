@@ -1,45 +1,74 @@
-import React from 'react';
-import { ExternalLink } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa';
+import React from "react";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring", stiffness: 50 } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 export default function Project() {
   const projects = [
     {
       title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with modern UI, secure payments, and a powerful admin dashboard.",
+      description:
+        "A full-stack e-commerce solution with modern UI, secure payments, and a powerful admin dashboard.",
       techStack: ["React.js", "Node.js", "MongoDB", "Tailwind CSS"],
       liveLink: "#",
       githubLink: "#",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop"
+      image:
+        "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
     },
     {
       title: "Task Management App",
-      description: "A collaborative task management application featuring real-time updates and intuitive drag-and-drop interfaces.",
+      description:
+        "A collaborative task management application featuring real-time updates and intuitive drag-and-drop interfaces.",
       techStack: ["React.js", "Express", "PostgreSQL", "Socket.io"],
       liveLink: "#",
       githubLink: "#",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop"
+      image:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop",
     },
     {
       title: "AI Image Generator",
-      description: "An AI-powered application that generates high-quality images from text descriptions using the latest models.",
+      description:
+        "An AI-powered application that generates high-quality images from text descriptions using the latest models.",
       techStack: ["React.js", "Python", "OpenAI API", "Tailwind CSS"],
       liveLink: "#",
       githubLink: "#",
-      image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop"
-    }
+      image:
+        "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop",
+    },
   ];
 
   return (
-    <section id="projects" className="relative py-24 px-6 bg-[#020617] border-t border-gray-900 overflow-hidden scroll-mt-20">
-      
+    <section
+      id="projects"
+      className="relative py-24 px-6 bg-[#020617] border-t border-gray-900 overflow-hidden scroll-mt-20"
+    >
       {/* Background Gradient */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2A8FEA]/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
         {/* Section Heading */}
-        <div className="text-center mb-16 relative">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUpVariants}
+          className="text-center mb-16 relative"
+        >
           <h2 className="text-xs font-bold tracking-[0.25em] text-[#2A8FEA] uppercase mb-3">
             Portfolio
           </h2>
@@ -47,21 +76,28 @@ export default function Project() {
             Projects
           </p>
           <div className="w-12 h-[2px] bg-[#2A8FEA] mx-auto mt-4" />
-        </div>
+        </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {projects.map((project, index) => (
-            <div 
+            <motion.div 
+              variants={fadeUpVariants}
               key={index}
               className="group relative rounded-3xl bg-gray-950/80 backdrop-blur-xl border border-gray-800 hover:border-[#2A8FEA]/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col"
             >
               {/* Project Image */}
               <div className="relative h-48 w-full overflow-hidden">
                 <div className="absolute inset-0 bg-[#2A8FEA]/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10" />
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
@@ -78,8 +114,8 @@ export default function Project() {
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.techStack.map((tech, tIdx) => (
-                    <span 
-                      key={tIdx} 
+                    <span
+                      key={tIdx}
                       className="px-3 py-1.5 text-xs font-semibold tracking-wide bg-gray-900 border border-gray-800 text-gray-300 rounded-lg hover:border-[#2A8FEA]/50 hover:text-white transition-colors"
                     >
                       {tech}
@@ -89,7 +125,7 @@ export default function Project() {
 
                 {/* Links */}
                 <div className="flex items-center gap-4 mt-auto">
-                  <a 
+                  <a
                     href={project.githubLink}
                     target="_blank"
                     rel="noreferrer"
@@ -98,7 +134,7 @@ export default function Project() {
                     <FaGithub className="w-4 h-4" />
                     Code
                   </a>
-                  <a 
+                  <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noreferrer"
@@ -109,10 +145,9 @@ export default function Project() {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

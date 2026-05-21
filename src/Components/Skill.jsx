@@ -1,4 +1,20 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring", stiffness: 50 } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 export default function Skill() {
   // Skill Categories Data Array with Logos
@@ -83,7 +99,13 @@ export default function Skill() {
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Heading */}
-        <div className="text-center mb-16">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUpVariants}
+          className="text-center mb-16"
+        >
           <h2 className="text-xs font-bold tracking-[0.25em] text-[#2A8FEA] uppercase mb-3">
             Expertise & Capabilities
           </h2>
@@ -91,24 +113,29 @@ export default function Skill() {
             Technical Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2A8FEA] to-[#60A5FA]"> Skills </span>
           </p>
           <div className="w-12 h-[2px] bg-[#2A8FEA] mx-auto mt-4" />
-        </div>
+        </motion.div>
 
         {/* Bento-style Skills Grid */}
         <div className="flex flex-col justify-between gap-8">
           {skillCategories.map((category, index) => (
-            <div
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
               key={index}
               className="bg-[#020617]/60 border border-gray-800 rounded-2xl p-8 hover:border-[#2A8FEA]/40 transition-all duration-300 group hover:shadow-[0_10px_30px_rgba(42,143,234,0.05)]"
             >
               {/* Category Header */}
-              <h3 className="text-xl font-bold text-white mb-6 tracking-wide uppercase group-hover:text-[#2A8FEA] transition-colors duration-300">
+              <motion.h3 variants={fadeUpVariants} className="text-xl font-bold text-white mb-6 tracking-wide uppercase group-hover:text-[#2A8FEA] transition-colors duration-300">
                 {category.title}
-              </h3>
+              </motion.h3>
 
               {/* Column-wise Skill List */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 {category.skills.map((skill, sIdx) => (
-                  <div
+                  <motion.div
+                    variants={fadeUpVariants}
                     key={sIdx}
                     className="flex items-center gap-4 p-3 bg-gray-950 border border-gray-800 rounded-xl hover:border-gray-600 hover:bg-gray-900 transition-colors duration-200"
                   >
@@ -118,9 +145,11 @@ export default function Skill() {
                         src={skill.logo}
                         alt={`${skill.name} logo`}
                         className={`w-full h-full object-contain ${
-                          skill.name === 'VS Code' ? 'scale-[1.7]' :
-                          ['Git & GitHub', 'Vite'].includes(skill.name) ? 'scale-[1.4]' : 
-                          'scale-110'
+                          skill.name === "VS Code"
+                            ? "scale-[1.7]"
+                            : ["Git & GitHub", "Vite"].includes(skill.name)
+                              ? "scale-[1.4]"
+                              : "scale-110"
                         }`}
                         loading="lazy"
                       />
@@ -129,10 +158,10 @@ export default function Skill() {
                     <span className="text-sm font-semibold tracking-wide text-gray-300 group-hover/item:text-white transition-colors duration-200">
                       {skill.name}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

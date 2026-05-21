@@ -1,4 +1,20 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring", stiffness: 50 } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 export default function AboutSection() {
   return (
@@ -12,7 +28,13 @@ export default function AboutSection() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 mb-25">
         {/* Section Heading */}
-        <div className="flex flex-col items-center mb-16 md:mb-24">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUpVariants}
+          className="flex flex-col items-center mb-16 md:mb-24"
+        >
           <p className="text-[#2A8FEA] font-semibold tracking-[0.2em] uppercase mb-2 text-sm md:text-base">
             Get to know
           </p>
@@ -23,34 +45,46 @@ export default function AboutSection() {
             </span>
           </p>
           <div className="w-24 h-1 bg-[#2A8FEA] mt-6 rounded-full shadow-[0_0_15px_rgba(42,143,234,0.5)]"></div>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mx-auto max-w-6xl">
           {/* Left Column: Content */}
-          <div className="flex flex-col text-left">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={staggerContainer}
+            className="flex flex-col text-left"
+          >
+            <motion.h3 variants={fadeUpVariants} className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               Turning good ideas into{" "}
               <span className="text-[#2A8FEA]">real</span> and working{" "}
               <span className="text-[#2A8FEA]">web applications.</span>
-            </h3>
+            </motion.h3>
 
-            <p className="text-gray-400 text-lg leading-relaxed mb-6">
+            <motion.p variants={fadeUpVariants} className="text-gray-400 text-lg leading-relaxed mb-6">
               Hi, I'm Prince Chavda. I'm currently finishing my computer
               applications degree while building real-world projects. I am a
               full-stack developer, which means I build both the parts of a
               website you see, and the hidden logic that makes it all work
-            </p>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            </motion.p>
+            <motion.p variants={fadeUpVariants} className="text-gray-400 text-lg leading-relaxed">
               I love the process of turning a blank screen into a fully
               functioning website. I have completed a professional internship
               where I learned how to build software the right way—from planning
               the first steps to putting the final project live on the internet.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Right Column: Details Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-            <div className="bg-[#050e29] border border-[#2A8FEA]/20 p-6 rounded-2xl shadow-[0_0_15px_rgba(42,143,234,0.05)] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(42,143,234,0.15)] transition-all duration-300">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full"
+          >
+            <motion.div variants={fadeUpVariants} className="bg-[#050e29] border border-[#2A8FEA]/20 p-6 rounded-2xl shadow-[0_0_15px_rgba(42,143,234,0.05)] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(42,143,234,0.15)] transition-all duration-300">
               <span className="text-[#2A8FEA] text-xs mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
@@ -70,9 +104,9 @@ export default function AboutSection() {
               <span className="text-white font-semibold text-lg block truncate">
                 Prince Chavda
               </span>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#050e29] border border-[#2A8FEA]/20 p-6 rounded-2xl shadow-[0_0_15px_rgba(42,143,234,0.05)] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(42,143,234,0.15)] transition-all duration-300">
+            <motion.div variants={fadeUpVariants} className="bg-[#050e29] border border-[#2A8FEA]/20 p-6 rounded-2xl shadow-[0_0_15px_rgba(42,143,234,0.05)] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(42,143,234,0.15)] transition-all duration-300">
               <span className="text-[#2A8FEA] text-xs mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
@@ -95,9 +129,9 @@ export default function AboutSection() {
               >
                 princechavada897@gmail.com
               </span>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#050e29] border border-[#2A8FEA]/20 p-6 rounded-2xl shadow-[0_0_15px_rgba(42,143,234,0.05)] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(42,143,234,0.15)] transition-all duration-300">
+            <motion.div variants={fadeUpVariants} className="bg-[#050e29] border border-[#2A8FEA]/20 p-6 rounded-2xl shadow-[0_0_15px_rgba(42,143,234,0.05)] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(42,143,234,0.15)] transition-all duration-300">
               <span className="text-[#2A8FEA] text-xs mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
@@ -117,9 +151,9 @@ export default function AboutSection() {
               <span className="text-white font-semibold text-lg block truncate">
                 Full Stack Developer
               </span>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#050e29] border border-[#2A8FEA]/20 p-6 rounded-2xl shadow-[0_0_15px_rgba(42,143,234,0.05)] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(42,143,234,0.15)] transition-all duration-300">
+            <motion.div variants={fadeUpVariants} className="bg-[#050e29] border border-[#2A8FEA]/20 p-6 rounded-2xl shadow-[0_0_15px_rgba(42,143,234,0.05)] hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(42,143,234,0.15)] transition-all duration-300">
               <span className="text-[#2A8FEA] text-xs mb-3 uppercase tracking-widest font-bold flex items-center gap-2">
                 <svg
                   className="w-4 h-4"
@@ -139,8 +173,8 @@ export default function AboutSection() {
               <span className="text-white font-semibold text-lg block truncate">
                 +91 7859818231
               </span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

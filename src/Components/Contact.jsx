@@ -1,6 +1,32 @@
 import React, { useState } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring", stiffness: 50 } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const slideInLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, type: "spring", stiffness: 50 } },
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, type: "spring", stiffness: 50 } },
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -67,7 +93,13 @@ export default function Contact() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Heading */}
-        <div className="text-center mb-20">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUpVariants}
+          className="text-center mb-20"
+        >
           <h2 className="text-xs font-bold tracking-[0.25em] text-[#2A8FEA] uppercase mb-3">
             Get In Touch
           </h2>
@@ -78,23 +110,29 @@ export default function Contact() {
             </span>
           </p>
           <div className="w-16 h-[3px] bg-gradient-to-r from-transparent via-[#2A8FEA] to-transparent mx-auto mt-6" />
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left Column: Contact Info */}
-          <div className="flex flex-col justify-center">
-            <h3 className="text-3xl font-bold text-white mb-6">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={staggerContainer}
+            className="flex flex-col justify-center"
+          >
+            <motion.h3 variants={slideInLeft} className="text-3xl font-bold text-white mb-6">
               Let's build something{" "}
               <span className="text-[#2A8FEA]">great.</span>
-            </h3>
-            <p className="text-gray-400 mb-12 leading-relaxed text-lg">
+            </motion.h3>
+            <motion.p variants={slideInLeft} className="text-gray-400 mb-12 leading-relaxed text-lg">
               Have a question, a project proposal, or looking for a dedicated
               developer to join your team? Send me a message. I'm always excited
               to tackle new challenges and would love to hear from you.
-            </p>
+            </motion.p>
 
             <div className="space-y-8 mb-16">
-              <div className="flex items-center gap-6 group">
+              <motion.div variants={slideInLeft} className="flex items-center gap-6 group">
                 <div className="w-14 h-14 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-center text-[#2A8FEA] group-hover:scale-110 group-hover:bg-[#2A8FEA]/10 transition-all duration-300">
                   <Mail className="w-6 h-6" />
                 </div>
@@ -109,9 +147,9 @@ export default function Contact() {
                     princechavada897@gmail.com
                   </a>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-center gap-6 group">
+              <motion.div variants={slideInLeft} className="flex items-center gap-6 group">
                 <div className="w-14 h-14 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-center text-[#2A8FEA] group-hover:scale-110 group-hover:bg-[#2A8FEA]/10 transition-all duration-300">
                   <MapPin className="w-6 h-6" />
                 </div>
@@ -123,11 +161,11 @@ export default function Contact() {
                     Rajkot, Gujarat
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4">
+            <motion.div variants={slideInLeft} className="flex items-center gap-4">
               <a
                 href="https://github.com/PrinceChavda09"
                 target="_blank"
@@ -142,11 +180,17 @@ export default function Contact() {
               >
                 <FaLinkedin className="w-5 h-5" />
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column: Contact Form */}
-          <div className="bg-gray-950/80 backdrop-blur-xl border border-gray-800 rounded-[2rem] p-8 md:p-10 relative">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={slideInRight}
+            className="bg-gray-950/80 backdrop-blur-xl border border-gray-800 rounded-[2rem] p-8 md:p-10 relative"
+          >
             <form className="space-y-6" onSubmit={onSubmit} noValidate>
               <div className="space-y-2">
                 <label
@@ -229,7 +273,7 @@ export default function Contact() {
                 <Send className="w-5 h-5 transition-transform" />
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

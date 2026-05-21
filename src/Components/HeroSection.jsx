@@ -1,5 +1,26 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { type: "spring", stiffness: 50, damping: 15 } 
+  },
+};
 
 export default function Hero() {
   return (
@@ -17,39 +38,47 @@ export default function Hero() {
       />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-5xl mx-auto w-full text-center flex flex-col items-center justify-center ">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 max-w-5xl mx-auto w-full text-center flex flex-col items-center justify-center "
+      >
         {/* Greeting */}
-        <p className="text-gray-400 text-lg md:text-2xl mb-4 tracking-[0.2em] font-light uppercase">
+        <motion.p variants={itemVariants} className="text-gray-400 text-lg md:text-2xl mb-4 tracking-[0.2em] font-light uppercase">
           Hello, I'm
-        </p>
+        </motion.p>
 
         {/* Main Name */}
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#2A8FEA] to-white text-4xl sm:text-5xl md:text-6xl lg:text-[55px] xl:text-[65px] font-extrabold uppercase leading-[1.1] mb-6 tracking-tighter drop-shadow-2xl select-none">
+        <motion.h1 variants={itemVariants} className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#2A8FEA] to-white text-4xl sm:text-5xl md:text-6xl lg:text-[55px] xl:text-[65px] font-extrabold uppercase leading-[1.1] mb-6 tracking-tighter drop-shadow-2xl select-none">
           Prince Chavda
-        </h1>
-        <TypeAnimation
-          className="font-[Montserrat] text-2xl max-[420px]:text-xl sm:text-3xl md:text-4xl py-1 mb-10 text-[#2A8FEA] border-b-2 border-gray-500"
-          sequence={[
-            "Full Stack Developer",
-            2000,
-            "React Developer",
-            2000,
-            "MERN Stack Developer",
-            2000,
-          ]}
-          wrapper="span"
-          speed={50}
-          repeat={Infinity}
-        />
+        </motion.h1>
+        
+        <motion.div variants={itemVariants}>
+          <TypeAnimation
+            className="font-[Montserrat] text-2xl max-[420px]:text-xl sm:text-3xl md:text-4xl py-1 mb-10 text-[#2A8FEA] border-b-2 border-gray-500"
+            sequence={[
+              "Full Stack Developer",
+              2000,
+              "React Developer",
+              2000,
+              "MERN Stack Developer",
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+          />
+        </motion.div>
 
-        <p className="text-gray-400 text-base sm:text-lg leading-relaxed px-4 sm:px-12 max-w-2xl mx-auto mb-5">
+        <motion.p variants={itemVariants} className="text-gray-400 text-base sm:text-lg leading-relaxed px-4 sm:px-12 max-w-2xl mx-auto mb-5">
           I build clean, responsive, and high-performance web applications. I am
           passionate about writing excellent code and constantly learning new
           technologies.
-        </p>
+        </motion.p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
           <a
             href="#projects"
             className="group relative w-full sm:w-auto px-8 py-4 bg-[#2A8FEA] text-white font-bold text-sm sm:text-base tracking-wide rounded-full overflow-hidden transition-all duration-300 transform"
@@ -80,11 +109,16 @@ export default function Hero() {
           >
             Contact Me
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Scroll Down Arrow */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center z-10 animate-bounce cursor-pointer">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center z-10 animate-bounce cursor-pointer"
+      >
         <a
           href="#AboutSection"
           className="text-gray-400 hover:text-[#2A8FEA] transition-colors duration-300"
@@ -105,7 +139,7 @@ export default function Hero() {
             />
           </svg>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }
