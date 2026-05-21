@@ -66,7 +66,7 @@ export default function AboutSection() {
               Hi, I'm Prince Chavda. I'm currently finishing my computer
               applications degree while building real-world projects. I am a
               full-stack developer, which means I build both the parts of a
-              website you see, and the hidden logic that makes it all work
+              website you see, and the hidden logic that makes it all work.
             </motion.p>
             <motion.p variants={fadeUpVariants} className="text-gray-400 text-lg leading-relaxed">
               I love the process of turning a blank screen into a fully
