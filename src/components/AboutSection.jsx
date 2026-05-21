@@ -115,7 +115,7 @@ export default function AboutSection() {
                 Role
               </span>
               <span className="text-white font-semibold text-lg block truncate">
-                Full-Stack Dev
+                Full Stack Developer
               </span>
             </div>
 
